@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<style>
+    @keyframes fade {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+    * {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        box-sizing: content-box;
+    } html,body {
+        width: 100%;
+        height: 100%;
+        background-color: lightgray;
+    } header {
+        background-color: #00b0eb;
+        text-align: center;
+        font-size: 45px;
+        color:white;
+        border-bottom: 5px solid gray;
+        font-weight: bold;
+    } main {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        margin: 30px auto auto;
+        animation-name: fade;
+        animation-duration: 5s;
+        animation-delay: 1s;
+      } .box-produtos {
+        width: 28%;
+        margin:1% 2%;
+        border: 3px solid white;
+        background-color: lightskyblue;
+        border-radius: 10px;
+    } .titProduto {
+        font-size: 25px;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+        border-bottom: 3px solid white;
+        margin-bottom: 15px;
+        padding: 10px;
+    } .imgProduto{
+        width: 100%;
+        margin-bottom: 10px;
+    } .imgProduto img {
+        width: 80%;
+        height: 200px;
+        margin: auto;
+    } .box-produtos:hover {
+        background-color: dodgerblue;
+        cursor: pointer;
+    } .preco {
+        width: 50%;
+        margin: 10px auto;
+        font-size: 25px;
+        color: red;
+        font-weight: bold;
+    } @media screen and (max-width:768px){
+        .box-produtos {
+            width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        PRODUTOS
+    </header>
+    <main class="principal">
+        {% for i in listaProdutos %}
+            <div class="box-produtos">
+                <div class="titProduto">{{ listaProdutos[i][0] }}</div>
+                <div class="imgProduto"><img src="{{ listaProdutos[i][3] }}" alt="{{ listaProdutos[i][0] }}"></div>
+                <div class="preco">{{ listaProdutos[i][1] }}/{{ listaProdutos[i][2] }}</div>
+            </div>
+        {% endfor %}
+    </main>
+
+</body>
+
+</html>
