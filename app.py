@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    listaProdutos = {1: ['Maça', '6,00', 'kg',
+    listaProdutos = {1: ['Maçã', '6,00', 'kg',
                          'https://conteudo.imguol.com.br/c/entretenimento/32/2018/01/18/maca-1516308281068_v2_450x337.jpg'],
                      2: ['Banana', '4,00', 'kg',
                          'https://www.ibahia.com/fileadmin/user_upload/ibahia/2019/outubro/25/banana.jpg?width=1200&enable=upscale'],
