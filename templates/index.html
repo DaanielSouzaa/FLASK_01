@@ -67,6 +67,9 @@
     } .box-produtos:hover {
         background-color: dodgerblue;
         cursor: pointer;
+    } .descricao{
+        font-size: 14px;
+        color:white;
     } .preco {
         width: 50%;
         margin: 10px auto;
@@ -89,6 +92,7 @@
             <div class="box-produtos">
                 <div class="titProduto">{{ listaProdutos[i][0] }}</div>
                 <div class="imgProduto"><img src="{{ listaProdutos[i][3] }}" alt="{{ listaProdutos[i][0] }}"></div>
+                <div class="descricao">Produto maravilhoso e suculento!</div>
                 <div class="preco">{{ listaProdutos[i][1] }}/{{ listaProdutos[i][2] }}</div>
             </div>
         {% endfor %}
